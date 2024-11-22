@@ -30,11 +30,11 @@ jobs:
         WIZ_ENV: ${{ secrets.WIZ_ENV }}
 
     - name: Run wiz CLI Directory scan
-      run: ./wizcli dir scan --output wizscan.sarif,sarif --path . 
+      run: ./wizcli dir scan --show-vulnerability-details --output wizscan.sarif,sarif --path . 
       env:
         WIZ_ENV: ${{ secrets.WIZ_ENV }}
 
     - name: Upload SARIF file
-      uses: github/codeql-action/upload-sarif@v2
+      uses: github/codeql-action/upload-sarif@v3
       with:
         sarif_file: wizscan.sarif 
