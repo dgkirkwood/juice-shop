@@ -31,6 +31,6 @@ jobs:
         WIZ_ENV: ${{ secrets.WIZ_ENV }}
 
     - name: Run wiz CLI IaC scan
-      run: ./wizcli dir scan --path .
+      run: ./wizcli dir scan --output wizscan.sarif,sarif --path . 
       env:
         WIZ_ENV: ${{ secrets.WIZ_ENV }}
