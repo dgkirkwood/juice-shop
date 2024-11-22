@@ -28,6 +28,7 @@ jobs:
       env:
         WIZ_CLIENT_ID: ${{ secrets.WIZ_CLIENT_ID }}
         WIZ_CLIENT_SECRET: ${{ secrets.WIZ_CLIENT_SECRET }}
+        WIZ_ENV: ${{ secrets.WIZ_ENV }}
 
     - name: Run wiz CLI IaC scan
       run: ./wizcli dir scan
